@@ -1,14 +1,13 @@
 import time
 from supabase import create_client, Client
 from twilio.rest import Client as TwilioClient
+import streamlit as st
 
-# --- DZIRE TECH CONFIGURATION ---
-SUPABASE_URL = "https://wiyrwciskmononuaaeih.supabase.co"
-SUPABASE_KEY = "sb_publishable_SlQxcUZEN193jYnehQvLEg_f5fUlS8_"
-
-# Credentials from your screenshot
-TWILIO_SID = "AC95f3fc37aff0efc284b77ecbf9fb441d".strip()
-TWILIO_TOKEN = "e741a114e0f986dd0e790c5131603bd7".strip()
+# Accessing secrets securely
+SUPABASE_URL = st.secrets["SUPABASE_URL"]
+SUPABASE_KEY = st.secrets["SUPABASE_KEY"]
+TWILIO_SID = st.secrets["TWILIO_SID"]
+TWILIO_TOKEN = st.secrets["TWILIO_TOKEN"]
 
 FROM_WHATSAPP = "whatsapp:+14155238886"
 TO_WHATSAPP = "whatsapp:+917017834244" 
@@ -70,4 +69,5 @@ while True:
         print(f"❌ [DB ERROR] Error fetching from Supabase: {e}")
     
     # Poll every 5 seconds
+
     time.sleep(5)
