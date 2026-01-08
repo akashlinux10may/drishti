@@ -2,6 +2,7 @@ import streamlit as st
 from supabase import create_client, Client
 import pandas as pd
 import time
+import streamlit as st
 
 # --- 1. ENTERPRISE BRANDING & CSS ---
 def apply_enterprise_theme():
@@ -45,9 +46,10 @@ div.stButton > button:hover {
         </style>
     """, unsafe_allow_html=True)
 
-# --- 2. CONFIGURATION ---
-SUPABASE_URL = "https://wiyrwciskmononuaaeih.supabase.co"
-SUPABASE_KEY = "sb_publishable_SlQxcUZEN193jYnehQvLEg_f5fUlS8_"
+
+# Accessing secrets securely
+SUPABASE_URL = st.secrets["SUPABASE_URL"]
+SUPABASE_KEY = st.secrets["SUPABASE_KEY"]
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 st.set_page_config(page_title="Dzire Guru-Assistant", layout="wide")
@@ -121,5 +123,6 @@ while True:
                 st.info(f"**Principal Alert:** Class 10A reaches 90% attendance.")
             else:
                 st.warning("No security alerts generated yet.")
+
 
     time.sleep(5)
