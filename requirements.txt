@@ -1,8 +1,9 @@
 streamlit
 supabase
 twilio
+dlib-bin
 face_recognition
 opencv-python-headless
-numpy
+numpy<2.0.0
 pandas
 python-dotenv
