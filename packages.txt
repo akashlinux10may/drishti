@@ -1,5 +1,4 @@
 cmake
+libgl1-mesa-dev
+libglib2.0-0
 build-essential
-libopenblas-dev
-liblapack-dev
-libgl1
