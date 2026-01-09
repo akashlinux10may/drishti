@@ -1,12 +1,7 @@
-setuptools
-wheel
-cmake
-dlib-bin
-face_recognition
 streamlit
+face-recognition==1.3.0
+opencv-python-headless
 supabase
 twilio
-opencv-python-headless
 numpy<2.0.0
-pandas
 python-dotenv
